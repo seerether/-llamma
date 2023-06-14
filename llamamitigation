@@ -1,0 +1,4 @@
+function transferNativeToken(NativeTokenData calldata nativeTokenData) public onlyLlama {
+  if (nativeTokenData.recipient == address(0)) revert ZeroAddressNotAllowed();
+  nativeTokenData.recipient.transfer(nativeTokenData.amount);
+}
